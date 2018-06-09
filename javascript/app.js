@@ -20,10 +20,10 @@ $(".btn").on("click", function() {
       console.log(result.response.docs[1].headline.main);
       var searchResult = result.response.docs[1].headline.main;
       console.log(searchResult);
-      var resultsDiv = $("<div style='margin: 20px;'>");
+      var resultsDiv = $("<div style='margin: 20px; border: 2px solid black; background-color: #777; color: white;'>");
       
       $("body").append(resultsDiv);
-      resultsDiv.html("Results: " + searchResult);
+      resultsDiv.html(searchResult);
     // }
   }).fail(function(err) {
     throw err;
