@@ -16,13 +16,17 @@ $(".btn").on("click", function() {
     method: 'GET',
   }).then(function(result) {
     console.log(result);
-    // console.log(result.response.docs[2].headline);
+    // for(var i = 0; i>5; i++) {
+      console.log(result.response.docs[1].headline.main);
+      var searchResult = result.response.docs[1].headline.main;
+      console.log(searchResult);
+      var resultsDiv = $("<div style='margin: 20px;'>");
+      
+      $("body").append(resultsDiv);
+      resultsDiv.html("Results: " + searchResult);
+    // }
   }).fail(function(err) {
     throw err;
   });
-
-  var resultsDiv = $("<div>");
-
-  $("body").append(resultsDiv.html("hi"));
 })
 
